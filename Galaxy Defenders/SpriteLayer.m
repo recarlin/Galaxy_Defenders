@@ -43,10 +43,11 @@
 -(void)initJoystick {
     SneakyJoystickSkinnedBase *joystickBase = [[SneakyJoystickSkinnedBase alloc] init];
     joystickBase.backgroundSprite = [CCSprite spriteWithFile:@"Joystick.png"];
+    joystickBase.backgroundSprite.scale = 4;
     joystickBase.thumbSprite = [CCSprite spriteWithFile:@"Joystick.png"];
-    joystickBase.thumbSprite.scale = .4;
+    joystickBase.thumbSprite.scale = 2;
     joystickBase.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 128, 128)];
-    joystickBase.position = ccp(130, 130);
+    joystickBase.position = ccp(120, 120);
     [self addChild:joystickBase];
     leftJoystick = [joystickBase.joystick retain];
 }

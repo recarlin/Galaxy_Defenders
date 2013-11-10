@@ -1229,13 +1229,14 @@
 				GCC_PREFIX_HEADER = "Galaxy Defenders/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"Galaxy Defenders/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Galaxy Defenders/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1250,13 +1251,14 @@
 				GCC_PREFIX_HEADER = "Galaxy Defenders/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"Galaxy Defenders/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Galaxy Defenders/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
