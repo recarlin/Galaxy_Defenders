@@ -14,6 +14,8 @@
 
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
+#import "SneakyButton.h"
+#import "SneakyButtonSkinnedBase.h"
 
 @interface SpriteLayer : CCLayer
 {
@@ -21,6 +23,17 @@
     CCSprite *enemy;
     CCSpriteBatchNode *explosionSpriteSheet;
     SneakyJoystick *leftJoystick;
+    SneakyButton *fireButton;
+    CCProgressTimer *hpBar;
+    BOOL gamePaused;
+    int health;
+    
+    NSMutableArray *enemies;
+    NSMutableArray *playerLasers;
+    NSMutableArray *enemyLasers;
+    NSMutableArray *removeEnemies;
+    NSMutableArray *removeLasers;
+    int enemiesLeft;
 }
 
 @end

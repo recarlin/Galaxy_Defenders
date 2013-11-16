@@ -148,13 +148,21 @@
 		FA591A35182ECF87008CD6E1 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FA591A30182ECF87008CD6E1 /* SneakyJoystick.m */; };
 		FA591A36182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA591A32182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m */; };
 		FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FA591A3A182ED0CE008CD6E1 /* PlayerShip.PNG */; };
-		FA591A3D182ED0D9008CD6E1 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FA591A3C182ED0D9008CD6E1 /* Background.png */; };
 		FA591A3F182ED1E7008CD6E1 /* Joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = FA591A3E182ED1E7008CD6E1 /* Joystick.png */; };
 		FA591A41182EDC44008CD6E1 /* EnemyShip.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FA591A40182EDC44008CD6E1 /* EnemyShip.PNG */; };
 		FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */; };
 		FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */; };
-		FA591A56182F33B2008CD6E1 /* explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = FA591A54182F33B2008CD6E1 /* explosion.png */; };
-		FA591A57182F33B2008CD6E1 /* explosion.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA591A55182F33B2008CD6E1 /* explosion.plist */; };
+		FA6AE1E118345BEA00A84C54 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E018345BEA00A84C54 /* Background.jpg */; };
+		FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E21834697000A84C54 /* LaserRed.png */; };
+		FA6AE1E51834697000A84C54 /* LaserGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E31834697000A84C54 /* LaserGreen.png */; };
+		FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E6183469BF00A84C54 /* PewPew.wav */; };
+		FA6AE1EA18346D6800A84C54 /* LaserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6AE1E918346D6800A84C54 /* LaserManager.m */; };
+		FA6AE1ED1835DA4100A84C54 /* ButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1EB1835DA4100A84C54 /* ButtonActive.png */; };
+		FA6AE1EE1835DA4100A84C54 /* ButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1EC1835DA4100A84C54 /* ButtonNormal.png */; };
+		FAD7A3ED1836E05D007C5A72 /* HPBar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A3EC1836E05D007C5A72 /* HPBar.png */; };
+		FAD7A3EF183709B5007C5A72 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A3EE183709B5007C5A72 /* Pause.png */; };
+		FAD7A40218372236007C5A72 /* Explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A40018372236007C5A72 /* Explosion.png */; };
+		FAD7A40318372236007C5A72 /* Explosion.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A40118372236007C5A72 /* Explosion.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -452,13 +460,22 @@
 		FA591A31182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		FA591A32182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		FA591A3A182ED0CE008CD6E1 /* PlayerShip.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerShip.PNG; sourceTree = "<group>"; };
-		FA591A3C182ED0D9008CD6E1 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		FA591A3E182ED1E7008CD6E1 /* Joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick.png; sourceTree = "<group>"; };
 		FA591A40182EDC44008CD6E1 /* EnemyShip.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnemyShip.PNG; sourceTree = "<group>"; };
 		FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
 		FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SpaceMusic.mp3; sourceTree = "<group>"; };
-		FA591A54182F33B2008CD6E1 /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
-		FA591A55182F33B2008CD6E1 /* explosion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explosion.plist; sourceTree = "<group>"; };
+		FA6AE1E018345BEA00A84C54 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		FA6AE1E21834697000A84C54 /* LaserRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserRed.png; sourceTree = "<group>"; };
+		FA6AE1E31834697000A84C54 /* LaserGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserGreen.png; sourceTree = "<group>"; };
+		FA6AE1E6183469BF00A84C54 /* PewPew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PewPew.wav; sourceTree = "<group>"; };
+		FA6AE1E818346D6800A84C54 /* LaserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserManager.h; sourceTree = "<group>"; };
+		FA6AE1E918346D6800A84C54 /* LaserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserManager.m; sourceTree = "<group>"; };
+		FA6AE1EB1835DA4100A84C54 /* ButtonActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonActive.png; sourceTree = "<group>"; };
+		FA6AE1EC1835DA4100A84C54 /* ButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNormal.png; sourceTree = "<group>"; };
+		FAD7A3EC1836E05D007C5A72 /* HPBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HPBar.png; sourceTree = "<group>"; };
+		FAD7A3EE183709B5007C5A72 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		FAD7A40018372236007C5A72 /* Explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explosion.png; sourceTree = "<group>"; };
+		FAD7A40118372236007C5A72 /* Explosion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Explosion.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -529,6 +546,8 @@
 				FA591A26182ECEBD008CD6E1 /* SpriteLayer.m */,
 				FA591A1A182ECCAB008CD6E1 /* IntroLayer.h */,
 				FA591A1B182ECCAB008CD6E1 /* IntroLayer.m */,
+				FA6AE1E818346D6800A84C54 /* LaserManager.h */,
+				FA6AE1E918346D6800A84C54 /* LaserManager.m */,
 				FA591884182ECCA8008CD6E1 /* Resources */,
 				FA59189C182ECCA9008CD6E1 /* libs */,
 				FA591A10182ECCAB008CD6E1 /* Supporting Files */,
@@ -954,12 +973,18 @@
 		FA591A38182ED0B9008CD6E1 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				FA591A54182F33B2008CD6E1 /* explosion.png */,
-				FA591A55182F33B2008CD6E1 /* explosion.plist */,
+				FAD7A3EE183709B5007C5A72 /* Pause.png */,
+				FAD7A3EC1836E05D007C5A72 /* HPBar.png */,
+				FA6AE1EB1835DA4100A84C54 /* ButtonActive.png */,
+				FA6AE1EC1835DA4100A84C54 /* ButtonNormal.png */,
+				FA6AE1E21834697000A84C54 /* LaserRed.png */,
+				FA6AE1E31834697000A84C54 /* LaserGreen.png */,
 				FA591A3E182ED1E7008CD6E1 /* Joystick.png */,
-				FA591A3C182ED0D9008CD6E1 /* Background.png */,
 				FA591A3A182ED0CE008CD6E1 /* PlayerShip.PNG */,
 				FA591A40182EDC44008CD6E1 /* EnemyShip.PNG */,
+				FAD7A40018372236007C5A72 /* Explosion.png */,
+				FAD7A40118372236007C5A72 /* Explosion.plist */,
+				FA6AE1E018345BEA00A84C54 /* Background.jpg */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -967,6 +992,7 @@
 		FA591A39182ED0C3008CD6E1 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				FA6AE1E6183469BF00A84C54 /* PewPew.wav */,
 				FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */,
 				FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */,
 			);
@@ -1024,24 +1050,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6AE1EE1835DA4100A84C54 /* ButtonNormal.png in Resources */,
 				FA591896182ECCA8008CD6E1 /* Icon.png in Resources */,
 				FA5919F4182ECCAB008CD6E1 /* ChangeLog in Resources */,
-				FA591A57182F33B2008CD6E1 /* explosion.plist in Resources */,
+				FA6AE1E51834697000A84C54 /* LaserGreen.png in Resources */,
 				FA591A41182EDC44008CD6E1 /* EnemyShip.PNG in Resources */,
 				FA591888182ECCA8008CD6E1 /* Default@2x.png in Resources */,
-				FA591A3D182ED0D9008CD6E1 /* Background.png in Resources */,
+				FAD7A3ED1836E05D007C5A72 /* HPBar.png in Resources */,
+				FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */,
+				FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */,
 				FA591892182ECCA8008CD6E1 /* Icon-Small.png in Resources */,
-				FA591A56182F33B2008CD6E1 /* explosion.png in Resources */,
+				FAD7A3EF183709B5007C5A72 /* Pause.png in Resources */,
 				FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */,
+				FA6AE1ED1835DA4100A84C54 /* ButtonActive.png in Resources */,
 				FA59188E182ECCA8008CD6E1 /* Icon-72.png in Resources */,
 				FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */,
 				FA591886182ECCA8008CD6E1 /* Default.png in Resources */,
 				FA591890182ECCA8008CD6E1 /* Icon-Small-50.png in Resources */,
+				FAD7A40218372236007C5A72 /* Explosion.png in Resources */,
 				FA59189B182ECCA9008CD6E1 /* iTunesArtwork in Resources */,
 				FA591894182ECCA8008CD6E1 /* Icon-Small@2x.png in Resources */,
 				FA59188C182ECCA8008CD6E1 /* Default-Landscape~ipad.png in Resources */,
 				FA59188A182ECCA8008CD6E1 /* Default-568h@2x.png in Resources */,
+				FAD7A40318372236007C5A72 /* Explosion.plist in Resources */,
 				FA591898182ECCA9008CD6E1 /* Icon@2x.png in Resources */,
+				FA6AE1E118345BEA00A84C54 /* Background.jpg in Resources */,
 				FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */,
 				FA591A3F182ED1E7008CD6E1 /* Joystick.png in Resources */,
 			);
@@ -1125,6 +1158,7 @@
 				FA591991182ECCAA008CD6E1 /* CCTouchHandler.m in Sources */,
 				FA59190B182ECCAA008CD6E1 /* CCMotionStreak.m in Sources */,
 				FA59198A182ECCAA008CD6E1 /* CCGLView.m in Sources */,
+				FA6AE1EA18346D6800A84C54 /* LaserManager.m in Sources */,
 				FA5919B7182ECCAB008CD6E1 /* CGPointExtension.m in Sources */,
 				FA5918BB182ECCA9008CD6E1 /* CCActionPageTurn3D.m in Sources */,
 				FA591A0C182ECCAB008CD6E1 /* vec3.c in Sources */,
@@ -1236,7 +1270,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1258,7 +1292,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1283,6 +1317,7 @@
 				FA591A21182ECCAC008CD6E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
