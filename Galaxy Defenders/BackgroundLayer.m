@@ -12,6 +12,7 @@
     self = [super init];
     if (self != nil)
     {
+//This will create a background sprite based off of the iOS device in use.
         bg = [CCSprite spriteWithFile:@"BG.jpg"];
         bg.anchorPoint = ccp(0, 0);
         bg.position = ccp(0, 0);

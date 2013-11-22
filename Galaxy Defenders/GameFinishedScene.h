@@ -8,10 +8,10 @@
 #import "CCScene.h"
 #import "cocos2d.h"
 #import "MenuScene.h"
-#import "GameScene.h"
+#import "CreditsScene.h"
 @interface GameFinishedScene : CCScene
 {
-    @public BOOL victory;
+    CCSprite *resultsLabel;
 }
-+(CCScene *) scene;
++(CCScene *) scene:(int)results;
 @end

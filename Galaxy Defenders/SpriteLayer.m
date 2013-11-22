@@ -9,6 +9,7 @@
 @implementation SpriteLayer
 - (id)init
 {
+//Here we set up the joystick, the fire button, the enemies, the player, and other variables to run the game. It also preloads some sounds, loads the explosion sprite sheet, and initiates the HP bar and updater. This is where the game is set up, pretty much. Also, it sets the game up based off of the iOS device in use.
     self = [super init];
     if (self != nil)
     {
@@ -100,6 +101,7 @@
 }
 -(void)initJoystick
 {
+//This will set up the joystick based on the iOS device in use.
     SneakyJoystickSkinnedBase *joystickBase = [[SneakyJoystickSkinnedBase alloc] init];
     joystickBase.backgroundSprite = [CCSprite spriteWithFile:@"Joystick.png"];
     joystickBase.thumbSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
@@ -124,6 +126,7 @@
 }
 -(void)initButton
 {
+//This will set up the button based on the iOS device in use.
     SneakyButtonSkinnedBase *button = [[SneakyButtonSkinnedBase alloc]init];
     button.defaultSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
     button.activatedSprite = [CCSprite spriteWithFile:@"ButtonNormal.png"];
@@ -152,6 +155,7 @@
 }
 -(void) update:(ccTime)deltaTime
 {
+//Here we have the main functionality of the game. Here we update the location of the player ship, we look for button presses, we initiate the firing of all lasers, collision detection with lasers and player/enemies, and we watch for victory/defeat conditions. All the action happens in this block of code. Some of the elements are based off of the iOS device in use.
     CGPoint velocity = ccpMult(leftJoystick.velocity, 500);
     CGPoint newPosition = ccp(player.position.x + velocity.x * deltaTime, player.position.y + velocity.y * deltaTime);
     CGSize size = [[CCDirector sharedDirector] winSize];
@@ -189,7 +193,8 @@
                 CGPoint blowUpHere = ccp(en.position.x, en.position.y);
                 [removeEnemies addObject:en];
                 NSMutableArray *explosionFrames = [NSMutableArray array];
-                for (int i=10001; i<=10090; i++) {
+                for (int i=10001; i<=10090; i++)
+                {
                     [explosionFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"explosion_%d.png",i]]];
                 }
                 CCSprite *boom = [CCSprite spriteWithSpriteFrameName:@"explosion_10001.png"];
@@ -208,8 +213,7 @@
             if (enemies.count <= 0)
             {
                 [self unscheduleUpdate];
-                
-                [self finishGame:1];
+                [self performSelector:@selector(finishGame:) withObject:1 afterDelay:5.0f];
             }
         }
     }
@@ -250,12 +254,15 @@
         [boom runAction:explosion];
         [[SimpleAudioEngine sharedEngine]playEffect:@"Explosion.mp3"];
         [explosionSpriteSheet addChild:boom];
-        [self finishGame:2];
+        result = 2;
+        [self performSelector:@selector(finishGame) withObject:Nil afterDelay:0.0f];
     }
 }
 -(void)shootLaserFrom:(CGPoint)start to:(CGPoint)end over:(float)duration as:(int)laserType
 {
-    switch (laserType) {
+//This method will take the parameters, create a laser sprite based on what entity is shooting, and moves the laser along the path. This does handle both player and enemy lasers, and it does base everything off of the iOS device in use.
+    switch (laserType)
+    {
         case 1:
         {
             CCSprite *laserPewPew = [CCSprite spriteWithFile:@"LaserGreen.png"];
@@ -310,6 +317,7 @@
 }
 -(void)changeState
 {
+//This simply pauses or unpauses the game.
     if (gamePaused == FALSE)
     {
         gamePaused = TRUE;
@@ -320,41 +328,21 @@
         [[CCDirector sharedDirector]resume];
     }
 }
--(void)finishGame:(int)results
+-(void)finishGame
 {
-    switch (results)
+//Here we take the game results and open the finishing scene with the parameter to make sure we are getting the correct result.
+    switch (result)
     {
         case 1:
         {
-            UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"VICTORY" message:@"You have destroyed all the enemy ships!" delegate:self cancelButtonTitle:@"Replay" otherButtonTitles:@"Menu", nil];
-            [dialog show];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1]];
         }
-            break;
         case 2:
         {
-            UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"DEFEAT" message:@"The enemies have destroyed your ship!" delegate:self cancelButtonTitle:@"Replay" otherButtonTitles:@"Menu", nil];
-            [dialog show];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2]];
         }
             break;
             
-        default:
-            break;
-    }
-}
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex)
-    {
-        case 0:
-        {
-            [[CCDirector sharedDirector]replaceScene:[GameScene scene]];
-        }
-            break;
-        case 1:
-        {
-            [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:2 scene:[MenuScene scene]]];
-        }
-            break;
         default:
             break;
     }

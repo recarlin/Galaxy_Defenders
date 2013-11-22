@@ -18,6 +18,7 @@
 {
 	if( (self=[super init]))
     {
+//Here we set up the correct splash screen for the iOS device in use and set it as a sprite over the whole screen.
 		CGSize size = [[CCDirector sharedDirector] winSizeInPixels];
         CGSize size2 = [[CCDirector sharedDirector]winSize];
 		CCSprite *background;
@@ -42,11 +43,13 @@
 }
 -(void) onEnter
 {
+//This will transition to the game menu after 2 seconds of this scene being open.
 	[super onEnter];
     [self performSelector:@selector(transition) withObject:nil afterDelay:2];
 }
 -(void) transition
 {
+//Transitions to the menu scene.
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuScene scene]]];
 }
 @end

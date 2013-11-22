@@ -11,6 +11,7 @@
 #import "CDAudioManager.h"
 #import "CocosDenshion.h"
 #import "GameScene.h"
+#import "GameFinishedScene.h"
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "SneakyButton.h"
@@ -23,6 +24,7 @@
     SneakyJoystick *leftJoystick;
     SneakyButton *fireButton;
     CCProgressTimer *hpBar;
+    int result;
     BOOL gamePaused;
     int health;
     NSMutableArray *enemies;
