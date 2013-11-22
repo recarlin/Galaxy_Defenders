@@ -5,19 +5,17 @@
 //  Created by Russell Carlin on 11/9/13.
 //  Copyright (c) 2013 Alonely. All rights reserved.
 //
-
 #import "CCLayer.h"
 #import "cocos2d.h"
 #import "SimpleAudioEngine.h"
 #import "CDAudioManager.h"
 #import "CocosDenshion.h"
-
+#import "GameScene.h"
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "SneakyButton.h"
 #import "SneakyButtonSkinnedBase.h"
-
-@interface SpriteLayer : CCLayer
+@interface SpriteLayer : CCLayer <UIAlertViewDelegate>
 {
     CCSprite *player;
     CCSprite *enemy;
@@ -27,7 +25,6 @@
     CCProgressTimer *hpBar;
     BOOL gamePaused;
     int health;
-    
     NSMutableArray *enemies;
     NSMutableArray *playerLasers;
     NSMutableArray *enemyLasers;
@@ -35,5 +32,4 @@
     NSMutableArray *removeLasers;
     int enemiesLeft;
 }
-
 @end
