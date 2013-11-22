@@ -213,7 +213,8 @@
             if (enemies.count <= 0)
             {
                 [self unscheduleUpdate];
-                [self performSelector:@selector(finishGame:) withObject:1 afterDelay:5.0f];
+                result = 1;
+                [self performSelector:@selector(finishGame) withObject:Nil afterDelay:5.0f];
             }
         }
     }
@@ -255,7 +256,7 @@
         [[SimpleAudioEngine sharedEngine]playEffect:@"Explosion.mp3"];
         [explosionSpriteSheet addChild:boom];
         result = 2;
-        [self performSelector:@selector(finishGame) withObject:Nil afterDelay:0.0f];
+        [self performSelector:@selector(finishGame) withObject:Nil afterDelay:5.0f];
     }
 }
 -(void)shootLaserFrom:(CGPoint)start to:(CGPoint)end over:(float)duration as:(int)laserType
@@ -337,6 +338,7 @@
         {
             [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1]];
         }
+            break;
         case 2:
         {
             [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2]];
