@@ -58,6 +58,6 @@
 - (void) startGame
 {
 //This opens the game scene.
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene:1]];
 }
 @end

@@ -7,12 +7,12 @@
 //
 #import "GameScene.h"
 @implementation GameScene
-+(CCScene *) scene
++(CCScene *) scene:(int)level
 {
 	CCScene *scene = [CCScene node];
     GameScene *layer = [GameScene node];
     BackgroundLayer *bg = [BackgroundLayer node];
-    SpriteLayer *sprites = [SpriteLayer node];
+    CCLayer *sprites = [SpriteLayer showSpritesOnLevel:level];
     [scene addChild:layer];
     [scene addChild: bg z: -1];
     [scene addChild: sprites z: 10];

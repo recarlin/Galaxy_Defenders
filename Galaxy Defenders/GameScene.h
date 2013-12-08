@@ -13,5 +13,5 @@
 {
     
 }
-+(CCScene *) scene;
++(CCScene *) scene:(int)level;
 @end

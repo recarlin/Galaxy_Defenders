@@ -18,11 +18,12 @@
 #import "SneakyButtonSkinnedBase.h"
 @interface SpriteLayer : CCLayer <UIAlertViewDelegate>
 {
+    int currentLevel;
     CCSprite *player;
     CCSprite *enemy;
     CCSpriteBatchNode *explosionSpriteSheet;
     SneakyJoystick *leftJoystick;
-    SneakyButton *fireButton;
+    SneakyJoystick *rightJoystick;
     CCProgressTimer *hpBar;
     int result;
     BOOL gamePaused;
@@ -32,6 +33,8 @@
     NSMutableArray *enemyLasers;
     NSMutableArray *removeEnemies;
     NSMutableArray *removeLasers;
+    NSMutableArray *removePlayerLasers;
     int enemiesLeft;
 }
++(CCLayer *)showSpritesOnLevel:(int)level;
 @end

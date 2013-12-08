@@ -12,6 +12,8 @@
 @interface GameFinishedScene : CCScene
 {
     CCSprite *resultsLabel;
+    CCMenuItem *secondButton;
+    int currentLevel;
 }
-+(CCScene *) scene:(int)results;
++(CCScene *) scene:(int)results onLevel:(int)level;
 @end

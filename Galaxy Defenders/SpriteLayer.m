@@ -7,19 +7,17 @@
 //
 #import "SpriteLayer.h"
 @implementation SpriteLayer
-- (id)init
+- (id)initOnLevel:(int)level
 {
 //Here we set up the joystick, the fire button, the enemies, the player, and other variables to run the game. It also preloads some sounds, loads the explosion sprite sheet, and initiates the HP bar and updater. This is where the game is set up, pretty much. Also, it sets the game up based off of the iOS device in use.
     self = [super init];
     if (self != nil)
     {
         self.touchEnabled = TRUE;
+        currentLevel = level;
         playerLasers = [[NSMutableArray alloc]init];
         enemyLasers = [[NSMutableArray alloc]init];
         enemies = [[NSMutableArray alloc]init];
-        removeEnemies = [[NSMutableArray alloc] init];
-        removeLasers = [[NSMutableArray alloc]init];
-        enemiesLeft = 9;
         health = 100;
         gamePaused = FALSE;
         [[[CCDirector sharedDirector]view]setMultipleTouchEnabled:TRUE];
@@ -34,16 +32,69 @@
         {
             player = [CCSprite spriteWithFile:@"PlayerShip.PNG"];
             player.scale = .3;
-            player.position = ccp(size.width/2, 100);
+            player.rotation = 180;
+            player.position = ccp(size.width/2, size.height/2);
             [self addChild: player];
-            for (int i = 1; i < 10; i++)
+            if (currentLevel == 1)
             {
-                enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
-                enemy.scale = .3;
-                enemy.rotation = 180;
-                enemy.position = ccp(i * size.width/10, size.height - 30);
-                [enemies addObject:enemy];
-                [self addChild: enemy];
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 30);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+            }else if (currentLevel == 2)
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 30);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 5; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 270;
+                    enemy.position = ccp((size.width - 30), (i * size.height/5));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+            }else
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 30);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 5; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 270;
+                    enemy.position = ccp((size.width - 30), (i * size.height/5));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 6; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .3;
+                    enemy.rotation = 90;
+                    enemy.position = ccp((30), (i * size.height/6));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
             }
             CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"Pause.png" selectedImage:@"Pause.png" target:self selector:@selector(changeState)];
             pause.scale = .2;
@@ -65,16 +116,68 @@
         {
             player = [CCSprite spriteWithFile:@"PlayerShip.PNG"];
             player.scale = .5;
-            player.position = ccp(size.width/2, 100);
+            player.position = ccp(size.width/2, size.height/2);
             [self addChild: player];
-            for (int i = 1; i < 10; i++)
+            if (currentLevel == 1)
             {
-                enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
-                enemy.scale = .5;
-                enemy.rotation = 180;
-                enemy.position = ccp(i * size.width/10, size.height - 60);
-                [enemies addObject:enemy];
-                [self addChild: enemy];
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 60);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+            }else if (currentLevel == 2)
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 60);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 5; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 270;
+                    enemy.position = ccp((size.width - 60), (i * size.height/5));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+            }else
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 180;
+                    enemy.position = ccp(i * size.width/10, size.height - 60);
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 5; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 270;
+                    enemy.position = ccp((size.width - 60), (i * size.height/5));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
+                for (int i = 1; i < 6; i++)
+                {
+                    enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
+                    enemy.scale = .5;
+                    enemy.rotation = 90;
+                    enemy.position = ccp((60), (i * size.height/6));
+                    [enemies addObject:enemy];
+                    [self addChild: enemy];
+                }
             }
             CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"Pause.png" selectedImage:@"Pause.png" target:self selector:@selector(changeState)];
             pause.scale = .25;
@@ -93,75 +196,61 @@
             [self addChild:menu z:90];
             [self addChild:hpBar];
         }
-        [self initButton];
-        [self initJoystick];
+        [self initJoysticks];
         [self scheduleUpdate];
+        [self schedule:@selector(playerAutoShoot)interval:1.0];
     }
     return self;
 }
--(void)initJoystick
+-(void)initJoysticks
 {
 //This will set up the joystick based on the iOS device in use.
-    SneakyJoystickSkinnedBase *joystickBase = [[SneakyJoystickSkinnedBase alloc] init];
-    joystickBase.backgroundSprite = [CCSprite spriteWithFile:@"Joystick.png"];
-    joystickBase.thumbSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
+    SneakyJoystickSkinnedBase *LJoy = [[SneakyJoystickSkinnedBase alloc] init];
+    SneakyJoystickSkinnedBase *RJoy = [[SneakyJoystickSkinnedBase alloc] init];
+    LJoy.thumbSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
+    RJoy.thumbSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
     CGSize size = [[CCDirector sharedDirector]winSize];
     if (size.width == 480 & size.height == 320 || size.width == 568 & size.height == 320)
     {
-        joystickBase.backgroundSprite.scale = 2;
-        joystickBase.thumbSprite.scale = .15;
-        joystickBase.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 50, 50)];
-        joystickBase.joystick.joystickRadius = 40;
-        joystickBase.position = ccp(60, 60);
+        LJoy.thumbSprite.scale = .15;
+        LJoy.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 30, 30)];
+        LJoy.joystick.joystickRadius = 40;
+        LJoy.position = ccp(60, 60);
+        
+        RJoy.thumbSprite.scale = .15;
+        RJoy.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 30, 30)];
+        RJoy.joystick.joystickRadius = 40;
+        RJoy.position = ccp(size.width - 60, 60);
     } else
     {
-        joystickBase.backgroundSprite.scale = 4;
-        joystickBase.thumbSprite.scale = .3;
-        joystickBase.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 100, 100)];
-        joystickBase.joystick.joystickRadius = 80;
-        joystickBase.position = ccp(120, 120);
+        LJoy.thumbSprite.scale = .3;
+        LJoy.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 60, 60)];
+        LJoy.joystick.joystickRadius = 80;
+        LJoy.position = ccp(120, 120);
+        
+        RJoy.thumbSprite.scale = .3;
+        RJoy.joystick = [[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, 60, 60)];
+        RJoy.joystick.joystickRadius = 80;
+        RJoy.position = ccp(size.width - 120, 120);
     }
-    [self addChild:joystickBase];
-    leftJoystick = [joystickBase.joystick retain];
-}
--(void)initButton
-{
-//This will set up the button based on the iOS device in use.
-    SneakyButtonSkinnedBase *button = [[SneakyButtonSkinnedBase alloc]init];
-    button.defaultSprite = [CCSprite spriteWithFile:@"ButtonActive.png"];
-    button.activatedSprite = [CCSprite spriteWithFile:@"ButtonNormal.png"];
-    button.pressSprite = [CCSprite spriteWithFile:@"ButtonNormal.png"];
-    CGSize size = [[CCDirector sharedDirector]winSize];
-    if (size.width == 480 & size.height == 320 || size.width == 568 & size.height == 320)
-    {
-        button.defaultSprite.scale = .25;
-        button.activatedSprite.scale = .25;
-        button.pressSprite.scale = .25;
-        button.button = [[SneakyButton alloc] initWithRect: CGRectMake(0, 0, 50, 50)];
-        button.anchorPoint = ccp(0, 0);
-        button.position = ccp(size.width - 40, 40);
-        [self addChild:button];
-    } else
-    {
-        button.defaultSprite.scale = .5;
-        button.activatedSprite.scale = .5;
-        button.pressSprite.scale = .5;
-        button.button = [[SneakyButton alloc] initWithRect: CGRectMake(0, 0, 100, 100)];
-        button.anchorPoint = ccp(0, 0);
-        button.position = ccp(940, 90);
-        [self addChild:button];
-    }
-    fireButton = [button.button retain];
+    RJoy.joystick.autoCenter = FALSE;
+    [self addChild:LJoy];
+    [self addChild:RJoy];
+    leftJoystick = [LJoy.joystick retain];
+    rightJoystick = [RJoy.joystick retain];
 }
 -(void) update:(ccTime)deltaTime
 {
 //Here we have the main functionality of the game. Here we update the location of the player ship, we look for button presses, we initiate the firing of all lasers, collision detection with lasers and player/enemies, and we watch for victory/defeat conditions. All the action happens in this block of code. Some of the elements are based off of the iOS device in use.
+    removePlayerLasers = [[NSMutableArray alloc]init];
+    removeLasers = [[NSMutableArray alloc]init];
+    removeEnemies = [[NSMutableArray alloc] init];
     CGPoint velocity = ccpMult(leftJoystick.velocity, 500);
     CGPoint newPosition = ccp(player.position.x + velocity.x * deltaTime, player.position.y + velocity.y * deltaTime);
     CGSize size = [[CCDirector sharedDirector] winSize];
-    if (newPosition.y>=size.height/2)
+    if (newPosition.y>=size.height)
     {
-        newPosition.y=size.height/2;
+        newPosition.y=size.height;
     }
     if (newPosition.y<0)
     {
@@ -169,23 +258,35 @@
     }
     if (newPosition.x>size.width)
     {
-        newPosition.x=newPosition.x-size.width;
+        newPosition.x=size.width;
     }
     if (newPosition.x<0)
     {
-        newPosition.x=newPosition.x+size.width;
+        newPosition.x=0;
     }
+    [player setRotation:-rightJoystick.degrees + 90];
     [player setPosition:newPosition];
     for (CCSprite *en in enemies)
     {
         if ((rand() % 100 + 1) == 50)
         {
             [[SimpleAudioEngine sharedEngine]playEffect:@"PewPew.wav"];
-            [self shootLaserFrom:en.position to:ccp(en.position.x, 0) over:1.0f as:2];
+            [self createLaser:2 at:en.position withRotation:en.rotation];
         }
     }
     for (CCSprite *laser in playerLasers)
     {
+        float angle = -(laser.rotation - 90);
+        float velocity = 10;
+        float vx = cos(angle * M_PI / 180) * velocity;
+        float vy = sin(angle * M_PI / 180) * velocity;
+        CGPoint direction = ccp(vx,vy);
+        laser.position = ccpAdd(laser.position, direction);
+        if (!(CGRectIntersectsRect(CGRectMake(0, 0, size.width, size.height), laser.boundingBox)))
+        {
+            [removePlayerLasers addObject:laser];
+        }
+        removeEnemies = [[NSMutableArray alloc] init];
         for (CCSprite *en in enemies)
         {
             if (CGRectIntersectsRect(en.boundingBox, laser.boundingBox))
@@ -213,13 +314,27 @@
             if (enemies.count <= 0)
             {
                 [self unscheduleUpdate];
+                [self unschedule:@selector(playerAutoShoot)];
                 result = 1;
                 [self performSelector:@selector(finishGame) withObject:Nil afterDelay:5.0f];
             }
         }
+        [removeEnemies release];
     }
+    for (CCSprite *las in removePlayerLasers)
+    {
+        [playerLasers removeObject:las];
+        [self removeChild:las cleanup:YES];
+    }
+    [removePlayerLasers release];
     for (CCSprite *laser in enemyLasers)
     {
+        float angle = -(laser.rotation - 90);
+        float velocity = 10;
+        float vx = cos(angle * M_PI / 180) * velocity;
+        float vy = sin(angle * M_PI / 180) * velocity;
+        CGPoint direction = ccp(vx,vy);
+        laser.position = ccpAdd(laser.position, direction);
         if (CGRectIntersectsRect(player.boundingBox, laser.boundingBox))
         {
             [removeLasers addObject:laser];
@@ -227,19 +342,20 @@
             health -= 25;
             [hpBar setPercentage:health];
         }
+        if (!(CGRectIntersectsRect(CGRectMake(0, 0, size.width, size.height), laser.boundingBox)))
+        {
+            [removeLasers addObject:laser];
+        }
     }
     for (CCSprite *las in removeLasers)
     {
         [enemyLasers removeObject:las];
-        [self removeChild:las  cleanup:YES];
+        [self removeChild:las cleanup:YES];
     }
-    if (fireButton.active == YES)
-    {
-        [[SimpleAudioEngine sharedEngine]playEffect:@"PewPew.wav"];
-        [self shootLaserFrom:player.position to:ccp(player.position.x, 768) over:1.0f as:1];
-    }
+    [removeLasers release];
     if (health <= 0)
     {
+        [self unschedule:@selector(playerAutoShoot)];
         CGPoint blowUpHere = ccp(player.position.x, player.position.y);
         [self removeChild:player cleanup:TRUE];
         [self unscheduleUpdate];
@@ -259,14 +375,17 @@
         [self performSelector:@selector(finishGame) withObject:Nil afterDelay:5.0f];
     }
 }
--(void)shootLaserFrom:(CGPoint)start to:(CGPoint)end over:(float)duration as:(int)laserType
+-(void)createLaser:(int)laserType at:(CGPoint)location withRotation:(float)angle
 {
-//This method will take the parameters, create a laser sprite based on what entity is shooting, and moves the laser along the path. This does handle both player and enemy lasers, and it does base everything off of the iOS device in use.
+//This method will take the parameters, create a laser sprite based on what entity is shooting, and moves the laser along the path according to the angle given. This is based off of the device that is being used.
     switch (laserType)
     {
         case 1:
         {
             CCSprite *laserPewPew = [CCSprite spriteWithFile:@"LaserGreen.png"];
+            laserPewPew.anchorPoint = ccp(laserPewPew.position.x/2, 0);
+            laserPewPew.position = ccp(location.x, location.y);
+            laserPewPew.rotation = angle;
             CGSize size = [[CCDirector sharedDirector] winSize];
             if (size.width == 480 & size.height == 320 || size.width == 568 & size.height == 320)
             {
@@ -275,22 +394,16 @@
             {
                 laserPewPew.scale = .25;
             }
-            laserPewPew.position = ccp(start.x, start.y + 15);
             [self addChild:laserPewPew];
-            CCFiniteTimeAction *move = [CCMoveTo actionWithDuration:duration position:end];
-            CCAction *clean = [CCCallBlockN actionWithBlock:^(CCNode *node)
-                               {
-                                   [playerLasers removeObject:node];
-                                   [node removeFromParentAndCleanup:YES];
-                               }];
-            id action = [CCSequence actions:move, clean, nil];
             [playerLasers addObject:laserPewPew];
-            [laserPewPew runAction:action];
         }
             break;
         case 2:
         {
             CCSprite *laserPewPew = [CCSprite spriteWithFile:@"LaserRed.png"];
+            laserPewPew.anchorPoint = ccp(laserPewPew.position.x/2, 0);
+            laserPewPew.position = ccp(location.x, location.y);
+            laserPewPew.rotation = angle;
             CGSize size = [[CCDirector sharedDirector] winSize];
             if (size.width == 480 & size.height == 320 || size.width == 568 & size.height == 320)
             {
@@ -299,17 +412,8 @@
             {
                 laserPewPew.scale = .25;
             }
-            laserPewPew.position = ccp(start.x, start.y - 15);
             [self addChild:laserPewPew];
-            CCFiniteTimeAction *move = [CCMoveTo actionWithDuration:duration position:end];
-            CCAction *clean = [CCCallBlockN actionWithBlock:^(CCNode *node)
-                               {
-                                   [enemyLasers removeObject:node];
-                                   [node removeFromParentAndCleanup:YES];
-                               }];
-            id action = [CCSequence actions:move, clean, nil];
             [enemyLasers addObject:laserPewPew];
-            [laserPewPew runAction:action];
         }
             break;
         default:
@@ -336,17 +440,28 @@
     {
         case 1:
         {
-            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1]];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1 onLevel:currentLevel]];
         }
             break;
         case 2:
         {
-            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2]];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2 onLevel:currentLevel]];
         }
             break;
             
         default:
             break;
     }
+}
+-(void)playerAutoShoot
+{
+//This creates a laser for the player.
+    [[SimpleAudioEngine sharedEngine]playEffect:@"PewPew.wav"];
+    [self createLaser:1 at:player.position withRotation:player.rotation];
+}
++(CCLayer *)showSpritesOnLevel:(int)level
+{
+    CCLayer *layer = [[self alloc]initOnLevel:level];
+	return  layer;
 }
 @end
