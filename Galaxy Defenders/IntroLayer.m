@@ -9,6 +9,7 @@
 @implementation IntroLayer
 +(CCScene *) scene
 {
+    [[CCDirector sharedDirector] setDisplayStats:NO];
 	CCScene *scene = [CCScene node];
 	IntroLayer *layer = [IntroLayer node];
 	[scene addChild: layer];
