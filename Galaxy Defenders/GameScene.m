@@ -7,12 +7,12 @@
 //
 #import "GameScene.h"
 @implementation GameScene
-+(CCScene *) scene:(int)level
++(CCScene *) scene:(int)level withScore:(int)score
 {
 	CCScene *scene = [CCScene node];
     GameScene *layer = [GameScene node];
     BackgroundLayer *bg = [BackgroundLayer node];
-    CCLayer *sprites = [SpriteLayer showSpritesOnLevel:level];
+    CCLayer *sprites = [SpriteLayer showSpritesOnLevel:level withScore:score];
     [scene addChild:layer];
     [scene addChild: bg z: -1];
     [scene addChild: sprites z: 10];

@@ -139,10 +139,12 @@
 		FA591A35182ECF87008CD6E1 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FA591A30182ECF87008CD6E1 /* SneakyJoystick.m */; };
 		FA591A36182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA591A32182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m */; };
 		FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FA591A3A182ED0CE008CD6E1 /* PlayerShip.PNG */; };
-		FA591A3F182ED1E7008CD6E1 /* Joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = FA591A3E182ED1E7008CD6E1 /* Joystick.png */; };
 		FA591A41182EDC44008CD6E1 /* EnemyShip.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FA591A40182EDC44008CD6E1 /* EnemyShip.PNG */; };
 		FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */; };
 		FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */; };
+		FA67632318590F0C004277A7 /* LeaderboardScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67632218590F0C004277A7 /* LeaderboardScene.m */; };
+		FA676328185AC57B004277A7 /* LeaderboardsButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */; };
+		FA676329185AC57B004277A7 /* LeaderboardsButton_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */; };
 		FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E21834697000A84C54 /* LaserRed.png */; };
 		FA6AE1E51834697000A84C54 /* LaserGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E31834697000A84C54 /* LaserGreen.png */; };
 		FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E6183469BF00A84C54 /* PewPew.wav */; };
@@ -158,7 +160,7 @@
 		FAF3B3F9183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3F4183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png */; };
 		FAF3B3FA183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3F5183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone@2x.png */; };
 		FAF3B3FB183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3F6183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone.png */; };
-		FAF3B3FC183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone5.png */; };
+		FAF3B3FC183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png */; };
 		FAF3B3FF183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3FD183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS@2x.png */; };
 		FAF3B400183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B3FE183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS.png */; };
 		FAF3B406183EDB8100C6C71E /* PlayButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF3B404183EDB8100C6C71E /* PlayButton_Normal.png */; };
@@ -469,10 +471,13 @@
 		FA591A31182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		FA591A32182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		FA591A3A182ED0CE008CD6E1 /* PlayerShip.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerShip.PNG; sourceTree = "<group>"; };
-		FA591A3E182ED1E7008CD6E1 /* Joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joystick.png; sourceTree = "<group>"; };
 		FA591A40182EDC44008CD6E1 /* EnemyShip.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnemyShip.PNG; sourceTree = "<group>"; };
 		FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
 		FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SpaceMusic.mp3; sourceTree = "<group>"; };
+		FA67632118590F0C004277A7 /* LeaderboardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardScene.h; sourceTree = "<group>"; };
+		FA67632218590F0C004277A7 /* LeaderboardScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardScene.m; sourceTree = "<group>"; };
+		FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeaderboardsButton_Normal.png; path = "../../../../Personal Projects/MISC. Class files/Galaxy Defenders/Galaxy_Defenders_Images/LeaderboardsButton_Normal.png"; sourceTree = "<group>"; };
+		FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeaderboardsButton_Pressed.png; path = "../../../../Personal Projects/MISC. Class files/Galaxy Defenders/Galaxy_Defenders_Images/LeaderboardsButton_Pressed.png"; sourceTree = "<group>"; };
 		FA6AE1E21834697000A84C54 /* LaserRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserRed.png; sourceTree = "<group>"; };
 		FA6AE1E31834697000A84C54 /* LaserGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserGreen.png; sourceTree = "<group>"; };
 		FA6AE1E6183469BF00A84C54 /* PewPew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PewPew.wav; sourceTree = "<group>"; };
@@ -488,7 +493,7 @@
 		FAF3B3F4183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy_Defenders_Splash_iPad.png; sourceTree = "<group>"; };
 		FAF3B3F5183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Galaxy_Defenders_Splash_iPhone@2x.png"; sourceTree = "<group>"; };
 		FAF3B3F6183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy_Defenders_Splash_iPhone.png; sourceTree = "<group>"; };
-		FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy_Defenders_Splash_iPhone5.png; sourceTree = "<group>"; };
+		FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Galaxy_Defenders_Splash_iPhone-568h@2x.png"; sourceTree = "<group>"; };
 		FAF3B3FD183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Galaxy_Defenders_Splash_iPad_LS@2x.png"; sourceTree = "<group>"; };
 		FAF3B3FE183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy_Defenders_Splash_iPad_LS.png; sourceTree = "<group>"; };
 		FAF3B404183EDB8100C6C71E /* PlayButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton_Normal.png; sourceTree = "<group>"; };
@@ -545,7 +550,7 @@
 				FAF3B3F4183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png */,
 				FAF3B3F5183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone@2x.png */,
 				FAF3B3F6183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone.png */,
-				FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone5.png */,
+				FAF3B3F7183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png */,
 				FAF3B3FD183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS@2x.png */,
 				FAF3B3FE183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS.png */,
 			);
@@ -605,6 +610,8 @@
 				FAF3B422183F070C00C6C71E /* GameFinishedScene.m */,
 				FAF3B430183F233100C6C71E /* CreditsScene.h */,
 				FAF3B431183F233100C6C71E /* CreditsScene.m */,
+				FA67632118590F0C004277A7 /* LeaderboardScene.h */,
+				FA67632218590F0C004277A7 /* LeaderboardScene.m */,
 				FA591A22182ECEAA008CD6E1 /* BackgroundLayer.h */,
 				FA591A23182ECEAA008CD6E1 /* BackgroundLayer.m */,
 				FA591884182ECCA8008CD6E1 /* Resources */,
@@ -1044,6 +1051,8 @@
 		FAF3B424183F21CB00C6C71E /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */,
+				FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */,
 				FADCE12B1854058400AC903E /* ContinueButton_Normal.png */,
 				FADCE12C1854058400AC903E /* ContinueButton_Pressed.png */,
 				FAF3B433183F24D100C6C71E /* CreditsButton_Pressed.png */,
@@ -1057,7 +1066,6 @@
 				FAF3B41E183F064800C6C71E /* MenuButton_Normal.png */,
 				FA6AE1EB1835DA4100A84C54 /* ButtonActive.png */,
 				FA6AE1EC1835DA4100A84C54 /* ButtonNormal.png */,
-				FA591A3E182ED1E7008CD6E1 /* Joystick.png */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -1154,6 +1162,7 @@
 				FA6AE1EE1835DA4100A84C54 /* ButtonNormal.png in Resources */,
 				FAF3B41F183F064800C6C71E /* MenuButton_Pressed.png in Resources */,
 				FAF3B42D183F229300C6C71E /* Galaxy_Defenders_Icon_iPhone.png in Resources */,
+				FA676328185AC57B004277A7 /* LeaderboardsButton_Normal.png in Resources */,
 				FAF3B41C183F059A00C6C71E /* Guide.png in Resources */,
 				FADCE12D1854058400AC903E /* ContinueButton_Normal.png in Resources */,
 				FAF3B406183EDB8100C6C71E /* PlayButton_Normal.png in Resources */,
@@ -1167,13 +1176,14 @@
 				FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */,
 				FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */,
 				FAD7A3EF183709B5007C5A72 /* Pause.png in Resources */,
-				FAF3B3FC183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone5.png in Resources */,
+				FAF3B3FC183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png in Resources */,
 				FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */,
 				FA6AE1ED1835DA4100A84C54 /* ButtonActive.png in Resources */,
 				FAF3B435183F24D100C6C71E /* CreditsButton_Pressed.png in Resources */,
 				FAF3B420183F064800C6C71E /* MenuButton_Normal.png in Resources */,
 				FAF3B407183EDB8100C6C71E /* PlayButton_Pressed.png in Resources */,
 				FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */,
+				FA676329185AC57B004277A7 /* LeaderboardsButton_Pressed.png in Resources */,
 				FADCE12E1854058400AC903E /* ContinueButton_Pressed.png in Resources */,
 				FAF3B3F9183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png in Resources */,
 				FAF3B415183EF84A00C6C71E /* Galaxy_Defenders_Logo.png in Resources */,
@@ -1190,7 +1200,6 @@
 				FA415525183DAADD00678ED7 /* BG.jpg in Resources */,
 				FAF3B42E183F229300C6C71E /* Galaxy_Defenders_Icon_iPad@2x.png in Resources */,
 				FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */,
-				FA591A3F182ED1E7008CD6E1 /* Joystick.png in Resources */,
 				FAF3B411183EF33D00C6C71E /* GuideButton_Pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1204,6 +1213,7 @@
 			files = (
 				FA591A27182ECEBD008CD6E1 /* SpriteLayer.m in Sources */,
 				FA591960182ECCAA008CD6E1 /* CCTexturePVR.m in Sources */,
+				FA67632318590F0C004277A7 /* LeaderboardScene.m in Sources */,
 				FA5919B0182ECCAB008CD6E1 /* ccUtils.c in Sources */,
 				FA591901182ECCA9008CD6E1 /* CCLayer.m in Sources */,
 				FA591A36182ECF87008CD6E1 /* SneakyJoystickSkinnedBase.m in Sources */,

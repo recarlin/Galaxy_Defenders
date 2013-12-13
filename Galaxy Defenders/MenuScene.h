@@ -8,7 +8,9 @@
 #import "cocos2d.h"
 #import "GameScene.h"
 #import "GuideScene.h"
-@interface MenuScene : CCScene
+#import "CreditsScene.h"
+#import "LeaderboardScene.h"
+@interface MenuScene : CCScene <UIAlertViewDelegate>
 {
     
 }

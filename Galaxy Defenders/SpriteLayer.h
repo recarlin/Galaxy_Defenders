@@ -18,6 +18,9 @@
 #import "SneakyButtonSkinnedBase.h"
 @interface SpriteLayer : CCLayer <UIAlertViewDelegate>
 {
+    int time;
+    int currentScore;
+    CCLabelTTF *timer;
     int currentLevel;
     CCSprite *player;
     CCSprite *enemy;
@@ -36,5 +39,5 @@
     NSMutableArray *removePlayerLasers;
     int enemiesLeft;
 }
-+(CCLayer *)showSpritesOnLevel:(int)level;
++(CCLayer *)showSpritesOnLevel:(int)level withScore:(int)score;
 @end

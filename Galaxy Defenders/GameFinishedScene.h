@@ -14,6 +14,8 @@
     CCSprite *resultsLabel;
     CCMenuItem *secondButton;
     int currentLevel;
+    int currentScore;
+    NSString *currentPlayer;
 }
-+(CCScene *) scene:(int)results onLevel:(int)level;
++(CCScene *) scene:(int)results onLevel:(int)level withScore:(int)score;
 @end

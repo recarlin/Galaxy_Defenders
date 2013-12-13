@@ -13,5 +13,5 @@
 {
     
 }
-+(CCScene *) scene:(int)level;
++(CCScene *) scene:(int)level withScore:(int)score;
 @end

@@ -13,22 +13,33 @@
     if (self != nil)
     {
 //This will set up the guide scene with the image and buttons. It adjusts sizes based of of the iOS device being used.
-        CGSize size = [[CCDirector sharedDirector] winSize];
+        CGSize size = [[CCDirector sharedDirector]winSizeInPixels];
+        CGSize size2 = [[CCDirector sharedDirector]winSize];
         CCSprite *guide = [CCSprite spriteWithFile:@"Guide.png"];
-        guide.position = ccp(size.width/2, size.height/2);
+        guide.position = ccp(size2.width/2, size2.height/2);
         CCMenuItem *openMenu = [CCMenuItemImage itemWithNormalImage:@"MenuButton_Normal.png" selectedImage:@"MenuButton_Pressed.png" target:self selector:@selector(openMenu)];
-        openMenu.position = ccp(size.width/3, size.height- size.height/3);
+        openMenu.position = ccp(size2.width/3, size2.height- size2.height/3);
         CCMenuItem *play = [CCMenuItemImage itemWithNormalImage:@"PlayButton_Normal.png" selectedImage:@"PlayButton_Pressed.png" target:self selector:@selector(startGame)];
-        play.position = ccp(size.width - size.width/3, size.height - size.height/3);
+        play.position = ccp(size2.width - size2.width/3, size2.height - size2.height/3);
         CCMenu *menu = [CCMenu menuWithItems:openMenu, play, nil];
         menu.position = ccp(0, 0);
-        if (size.width == 480 & size.height == 320)
-        {
+        if (size.width == 480 & size.height == 320){
+            guide.scale = .5;
+            openMenu.scale = 2;
+            play.scale = 2;
+        }else if (size.width == 960 & size.height == 640){
             guide.scale = .85;
             openMenu.scale = 2;
             play.scale = 2;
-        } else
-        {
+        }else if (size.width == 1136 & size.height == 640){
+            guide.scale = 1;
+            openMenu.scale = 2;
+            play.scale = 2;
+        }else if (size.width == 1024 & size.height == 768){
+            guide.scale = 1;
+            openMenu.scale = 2;
+            play.scale = 2;
+        }else if (size.width == 2048 & size.height == 1536){
             guide.scale = 2;
             openMenu.scale = 5;
             play.scale = 5;
@@ -58,6 +69,6 @@
 - (void) startGame
 {
 //This opens the game scene.
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene:1]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene:1 withScore:0]];
 }
 @end

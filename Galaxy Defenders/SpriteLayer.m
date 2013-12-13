@@ -7,13 +7,20 @@
 //
 #import "SpriteLayer.h"
 @implementation SpriteLayer
-- (id)initOnLevel:(int)level
++(CCLayer *)showSpritesOnLevel:(int)level withScore:(int)score
+{
+    CCLayer *layer = [[self alloc]initOnLevel:level withScore:score];
+	return  layer;
+}
+- (id)initOnLevel:(int)level withScore:(int)score
 {
 //Here we set up the joystick, the fire button, the enemies, the player, and other variables to run the game. It also preloads some sounds, loads the explosion sprite sheet, and initiates the HP bar and updater. This is where the game is set up, pretty much. Also, it sets the game up based off of the iOS device in use.
     self = [super init];
     if (self != nil)
     {
         self.touchEnabled = TRUE;
+        time = 0;
+        currentScore = score;
         currentLevel = level;
         playerLasers = [[NSMutableArray alloc]init];
         enemyLasers = [[NSMutableArray alloc]init];
@@ -57,12 +64,12 @@
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < 4; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .3;
                     enemy.rotation = 270;
-                    enemy.position = ccp((size.width - 30), (i * size.height/5));
+                    enemy.position = ccp((size.width - 30), (i * size.height/4));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
@@ -77,21 +84,21 @@
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < 4; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .3;
                     enemy.rotation = 270;
-                    enemy.position = ccp((size.width - 30), (i * size.height/5));
+                    enemy.position = ccp((size.width - 30), (i * size.height/4));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 6; i++)
+                for (int i = 1; i < 5; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .3;
                     enemy.rotation = 90;
-                    enemy.position = ccp((30), (i * size.height/6));
+                    enemy.position = ccp((30), (i * size.height/5));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
@@ -99,7 +106,9 @@
             CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"Pause.png" selectedImage:@"Pause.png" target:self selector:@selector(changeState)];
             pause.scale = .2;
             pause.position = ccp(size.width - 20, size.height - 20);
-            CCMenu *menu = [CCMenu menuWithItems:pause, nil];
+            timer = [CCLabelTTF labelWithString:@"Time: 0" fontName:@"Verdana" fontSize:18];
+            timer.position = ccp(size.width/2, size.height/10);
+            CCMenu *menu = [CCMenu menuWithItems:pause, timer, nil];
             menu.position = ccp(0, 0);
             CCSprite *bar = [CCSprite spriteWithFile:@"HPBar.png"];
             hpBar = [CCProgressTimer progressWithSprite:bar];
@@ -116,6 +125,7 @@
         {
             player = [CCSprite spriteWithFile:@"PlayerShip.PNG"];
             player.scale = .5;
+            player.rotation = 180;
             player.position = ccp(size.width/2, size.height/2);
             [self addChild: player];
             if (currentLevel == 1)
@@ -140,12 +150,12 @@
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < 4; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .5;
                     enemy.rotation = 270;
-                    enemy.position = ccp((size.width - 60), (i * size.height/5));
+                    enemy.position = ccp((size.width - 60), (i * size.height/4));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
@@ -160,21 +170,21 @@
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < 4; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .5;
                     enemy.rotation = 270;
-                    enemy.position = ccp((size.width - 60), (i * size.height/5));
+                    enemy.position = ccp((size.width - 60), (i * size.height/4));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
-                for (int i = 1; i < 6; i++)
+                for (int i = 1; i < 5; i++)
                 {
                     enemy = [CCSprite spriteWithFile:@"EnemyShip.PNG"];
                     enemy.scale = .5;
                     enemy.rotation = 90;
-                    enemy.position = ccp((60), (i * size.height/6));
+                    enemy.position = ccp((60), (i * size.height/5));
                     [enemies addObject:enemy];
                     [self addChild: enemy];
                 }
@@ -182,6 +192,8 @@
             CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"Pause.png" selectedImage:@"Pause.png" target:self selector:@selector(changeState)];
             pause.scale = .25;
             pause.position = ccp(size.width - 30, size.height - 30);
+            timer = [CCLabelTTF labelWithString:@"Time: 0" fontName:@"Verdana" fontSize:36];
+            timer.position = ccp(size.width/2, size.height/10);
             CCMenu *menu = [CCMenu menuWithItems:pause, nil];
             menu.position = ccp(0, 0);
             CCSprite *bar = [CCSprite spriteWithFile:@"HPBar.png"];
@@ -193,12 +205,14 @@
             hpBar.percentage = 100;
             hpBar.midpoint = ccp(0, 1);
             hpBar.barChangeRate = ccp(1, 0);
+            [self addChild:timer];
             [self addChild:menu z:90];
             [self addChild:hpBar];
         }
         [self initJoysticks];
         [self scheduleUpdate];
         [self schedule:@selector(playerAutoShoot)interval:1.0];
+        [self schedule:@selector(scoreTimer)interval:1.0];
     }
     return self;
 }
@@ -248,27 +262,27 @@
     CGPoint velocity = ccpMult(leftJoystick.velocity, 500);
     CGPoint newPosition = ccp(player.position.x + velocity.x * deltaTime, player.position.y + velocity.y * deltaTime);
     CGSize size = [[CCDirector sharedDirector] winSize];
-    if (newPosition.y>=size.height)
+    if (newPosition.y>=size.height - size.height/10)
     {
-        newPosition.y=size.height;
+        newPosition.y=size.height - size.height/10;
     }
-    if (newPosition.y<0)
+    if (newPosition.y<size.height/8)
     {
-        newPosition.y=0;
+        newPosition.y=size.height/8;
     }
-    if (newPosition.x>size.width)
+    if (newPosition.x>size.width - size.width/10)
     {
-        newPosition.x=size.width;
+        newPosition.x=size.width - size.width/10;
     }
-    if (newPosition.x<0)
+    if (newPosition.x<size.width/10)
     {
-        newPosition.x=0;
+        newPosition.x=size.width/10;
     }
     [player setRotation:-rightJoystick.degrees + 90];
     [player setPosition:newPosition];
     for (CCSprite *en in enemies)
     {
-        if ((rand() % 100 + 1) == 50)
+        if ((rand() % 200 + 1) == 100)
         {
             [[SimpleAudioEngine sharedEngine]playEffect:@"PewPew.wav"];
             [self createLaser:2 at:en.position withRotation:en.rotation];
@@ -315,6 +329,7 @@
             {
                 [self unscheduleUpdate];
                 [self unschedule:@selector(playerAutoShoot)];
+                [self unschedule:@selector(scoreTimer)];
                 result = 1;
                 [self performSelector:@selector(finishGame) withObject:Nil afterDelay:5.0f];
             }
@@ -355,6 +370,7 @@
     [removeLasers release];
     if (health <= 0)
     {
+        [self unschedule:@selector(scoreTimer)];
         [self unschedule:@selector(playerAutoShoot)];
         CGPoint blowUpHere = ccp(player.position.x, player.position.y);
         [self removeChild:player cleanup:TRUE];
@@ -436,16 +452,21 @@
 -(void)finishGame
 {
 //Here we take the game results and open the finishing scene with the parameter to make sure we are getting the correct result.
+    currentScore = currentScore + ((100 - time) * (health/25 + 1));
+    if (currentScore <= 0)
+    {
+        currentScore = 0;
+    }
     switch (result)
     {
         case 1:
         {
-            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1 onLevel:currentLevel]];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:1 onLevel:currentLevel withScore:currentScore]];
         }
             break;
         case 2:
         {
-            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2 onLevel:currentLevel]];
+            [[CCDirector sharedDirector]replaceScene:[GameFinishedScene scene:2 onLevel:currentLevel withScore:currentScore]];
         }
             break;
             
@@ -459,9 +480,10 @@
     [[SimpleAudioEngine sharedEngine]playEffect:@"PewPew.wav"];
     [self createLaser:1 at:player.position withRotation:player.rotation];
 }
-+(CCLayer *)showSpritesOnLevel:(int)level
+-(void)scoreTimer
 {
-    CCLayer *layer = [[self alloc]initOnLevel:level];
-	return  layer;
+    //This creates a laser for the player.
+    time++;
+    timer.string = [NSString stringWithFormat:@"Time: %i",time];
 }
 @end
