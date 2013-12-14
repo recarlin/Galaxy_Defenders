@@ -108,7 +108,7 @@
             pause.position = ccp(size.width - 20, size.height - 20);
             timer = [CCLabelTTF labelWithString:@"Time: 0" fontName:@"Verdana" fontSize:18];
             timer.position = ccp(size.width/2, size.height/10);
-            CCMenu *menu = [CCMenu menuWithItems:pause, timer, nil];
+            CCMenu *menu = [CCMenu menuWithItems:pause, nil];
             menu.position = ccp(0, 0);
             CCSprite *bar = [CCSprite spriteWithFile:@"HPBar.png"];
             hpBar = [CCProgressTimer progressWithSprite:bar];
@@ -119,6 +119,7 @@
             hpBar.percentage = 100;
             hpBar.midpoint = ccp(0, 1);
             hpBar.barChangeRate = ccp(1, 0);
+            [self addChild:timer];
             [self addChild:menu z:90];
             [self addChild:hpBar];
         } else
@@ -262,21 +263,21 @@
     CGPoint velocity = ccpMult(leftJoystick.velocity, 500);
     CGPoint newPosition = ccp(player.position.x + velocity.x * deltaTime, player.position.y + velocity.y * deltaTime);
     CGSize size = [[CCDirector sharedDirector] winSize];
-    if (newPosition.y>=size.height - size.height/10)
+    if (newPosition.y>=size.height - size.height/9)
     {
-        newPosition.y=size.height - size.height/10;
+        newPosition.y=size.height - size.height/9;
     }
-    if (newPosition.y<size.height/8)
+    if (newPosition.y<size.height/7)
     {
-        newPosition.y=size.height/8;
+        newPosition.y=size.height/7;
     }
-    if (newPosition.x>size.width - size.width/10)
+    if (newPosition.x>size.width - size.width/9)
     {
-        newPosition.x=size.width - size.width/10;
+        newPosition.x=size.width - size.width/9;
     }
-    if (newPosition.x<size.width/10)
+    if (newPosition.x<size.width/9)
     {
-        newPosition.x=size.width/10;
+        newPosition.x=size.width/9;
     }
     [player setRotation:-rightJoystick.degrees + 90];
     [player setPosition:newPosition];
