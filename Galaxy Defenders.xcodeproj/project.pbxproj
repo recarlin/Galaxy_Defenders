@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA15D84E185DF5BF00C725F8 /* BoardsButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */; };
+		FA15D84F185DF5BF00C725F8 /* BoardsButton_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */; };
 		FA415525183DAADD00678ED7 /* BG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA415524183DAADD00678ED7 /* BG.jpg */; };
 		FA591870182ECCA8008CD6E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59186F182ECCA8008CD6E1 /* QuartzCore.framework */; };
 		FA591872182ECCA8008CD6E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA591871182ECCA8008CD6E1 /* OpenGLES.framework */; };
@@ -143,8 +145,6 @@
 		FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A42182EDE0C008CD6E1 /* Explosion.mp3 */; };
 		FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */; };
 		FA67632318590F0C004277A7 /* LeaderboardScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67632218590F0C004277A7 /* LeaderboardScene.m */; };
-		FA676328185AC57B004277A7 /* LeaderboardsButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */; };
-		FA676329185AC57B004277A7 /* LeaderboardsButton_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */; };
 		FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E21834697000A84C54 /* LaserRed.png */; };
 		FA6AE1E51834697000A84C54 /* LaserGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E31834697000A84C54 /* LaserGreen.png */; };
 		FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA6AE1E6183469BF00A84C54 /* PewPew.wav */; };
@@ -186,6 +186,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardsButton_Normal.png; sourceTree = "<group>"; };
+		FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardsButton_Pressed.png; sourceTree = "<group>"; };
 		FA415524183DAADD00678ED7 /* BG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BG.jpg; sourceTree = "<group>"; };
 		FA59186C182ECCA8008CD6E1 /* Galaxy Defenders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galaxy Defenders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA59186F182ECCA8008CD6E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -476,8 +478,6 @@
 		FA591A50182F326D008CD6E1 /* SpaceMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SpaceMusic.mp3; sourceTree = "<group>"; };
 		FA67632118590F0C004277A7 /* LeaderboardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardScene.h; sourceTree = "<group>"; };
 		FA67632218590F0C004277A7 /* LeaderboardScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardScene.m; sourceTree = "<group>"; };
-		FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeaderboardsButton_Normal.png; path = "../../../../Personal Projects/MISC. Class files/Galaxy Defenders/Galaxy_Defenders_Images/LeaderboardsButton_Normal.png"; sourceTree = "<group>"; };
-		FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeaderboardsButton_Pressed.png; path = "../../../../Personal Projects/MISC. Class files/Galaxy Defenders/Galaxy_Defenders_Images/LeaderboardsButton_Pressed.png"; sourceTree = "<group>"; };
 		FA6AE1E21834697000A84C54 /* LaserRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserRed.png; sourceTree = "<group>"; };
 		FA6AE1E31834697000A84C54 /* LaserGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaserGreen.png; sourceTree = "<group>"; };
 		FA6AE1E6183469BF00A84C54 /* PewPew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PewPew.wav; sourceTree = "<group>"; };
@@ -1051,8 +1051,8 @@
 		FAF3B424183F21CB00C6C71E /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				FA676326185AC57B004277A7 /* LeaderboardsButton_Normal.png */,
-				FA676327185AC57B004277A7 /* LeaderboardsButton_Pressed.png */,
+				FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */,
+				FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */,
 				FADCE12B1854058400AC903E /* ContinueButton_Normal.png */,
 				FADCE12C1854058400AC903E /* ContinueButton_Pressed.png */,
 				FAF3B433183F24D100C6C71E /* CreditsButton_Pressed.png */,
@@ -1159,10 +1159,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF3B439183F24E100C6C71E /* Defeat.png in Resources */,
+				FA15D84E185DF5BF00C725F8 /* BoardsButton_Normal.png in Resources */,
 				FA6AE1EE1835DA4100A84C54 /* ButtonNormal.png in Resources */,
 				FAF3B41F183F064800C6C71E /* MenuButton_Pressed.png in Resources */,
 				FAF3B42D183F229300C6C71E /* Galaxy_Defenders_Icon_iPhone.png in Resources */,
-				FA676328185AC57B004277A7 /* LeaderboardsButton_Normal.png in Resources */,
 				FAF3B41C183F059A00C6C71E /* Guide.png in Resources */,
 				FADCE12D1854058400AC903E /* ContinueButton_Normal.png in Resources */,
 				FAF3B406183EDB8100C6C71E /* PlayButton_Normal.png in Resources */,
@@ -1183,7 +1183,6 @@
 				FAF3B420183F064800C6C71E /* MenuButton_Normal.png in Resources */,
 				FAF3B407183EDB8100C6C71E /* PlayButton_Pressed.png in Resources */,
 				FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */,
-				FA676329185AC57B004277A7 /* LeaderboardsButton_Pressed.png in Resources */,
 				FADCE12E1854058400AC903E /* ContinueButton_Pressed.png in Resources */,
 				FAF3B3F9183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png in Resources */,
 				FAF3B415183EF84A00C6C71E /* Galaxy_Defenders_Logo.png in Resources */,
@@ -1199,6 +1198,7 @@
 				FAF3B3FB183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone.png in Resources */,
 				FA415525183DAADD00678ED7 /* BG.jpg in Resources */,
 				FAF3B42E183F229300C6C71E /* Galaxy_Defenders_Icon_iPad@2x.png in Resources */,
+				FA15D84F185DF5BF00C725F8 /* BoardsButton_Pressed.png in Resources */,
 				FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */,
 				FAF3B411183EF33D00C6C71E /* GuideButton_Pressed.png in Resources */,
 			);

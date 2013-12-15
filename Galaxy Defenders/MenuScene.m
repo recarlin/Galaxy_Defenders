@@ -31,7 +31,7 @@
         play.position = ccp(size2.width/3, size2.height/3);
         CCMenuItem *guide = [CCMenuItemImage itemWithNormalImage:@"GuideButton_Normal.png" selectedImage:@"GuideButton_Pressed.png" target:self selector:@selector(openGuide)];
         guide.position = ccp(size2.width - size2.width/3, size2.height/3);
-        CCMenuItem *leaderboards = [CCMenuItemImage itemWithNormalImage:@"LeaderboardsButton_Normal.png" selectedImage:@"LeaderboardsButton_Pressed.png" target:self selector:@selector(openLeaderboards)];
+        CCMenuItem *leaderboards = [CCMenuItemImage itemWithNormalImage:@"BoardsButton_Normal.png" selectedImage:@"BoardsButton_Pressed.png" target:self selector:@selector(openLeaderboards)];
         leaderboards.position = ccp(size2.width/3, size2.height/7);
         CCMenuItem *credits = [CCMenuItemImage itemWithNormalImage:@"CreditsButton_Normal.png" selectedImage:@"CreditsButton_Pressed.png" target:self selector:@selector(openCredits)];
         credits.position = ccp(size2.width - size2.width/3, size2.height/7);
