@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		FA15D84E185DF5BF00C725F8 /* BoardsButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */; };
 		FA15D84F185DF5BF00C725F8 /* BoardsButton_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */; };
+		FA2F32411862B87A00C96217 /* 5seconds.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32331862B87A00C96217 /* 5seconds.png */; };
+		FA2F32421862B87A00C96217 /* 30seconds.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32341862B87A00C96217 /* 30seconds.png */; };
+		FA2F32431862B87A00C96217 /* firstwin.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32351862B87A00C96217 /* firstwin.png */; };
+		FA2F324A1862B87A00C96217 /* win10.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F323C1862B87A00C96217 /* win10.png */; };
+		FA2F324B1862B87A00C96217 /* win25.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F323D1862B87A00C96217 /* win25.png */; };
+		FA2F324C1862B87A00C96217 /* win50.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F323E1862B87A00C96217 /* win50.png */; };
+		FA2F324D1862B87A00C96217 /* win100.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F323F1862B87A00C96217 /* win100.png */; };
+		FA2F32511862C4FD00C96217 /* FeatsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F32501862C4FD00C96217 /* FeatsScene.m */; };
+		FA2F32581863D5FB00C96217 /* FeatsButton_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32561863D5FB00C96217 /* FeatsButton_Normal.png */; };
+		FA2F32591863D5FB00C96217 /* FeatsButton_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32571863D5FB00C96217 /* FeatsButton_Pressed.png */; };
+		FA2F32611863E31C00C96217 /* 5seconds_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325A1863E31C00C96217 /* 5seconds_Nope.png */; };
+		FA2F32621863E31C00C96217 /* 30seconds_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325B1863E31C00C96217 /* 30seconds_Nope.png */; };
+		FA2F32631863E31C00C96217 /* firstwin_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325C1863E31C00C96217 /* firstwin_Nope.png */; };
+		FA2F32641863E31C00C96217 /* win10_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325D1863E31C00C96217 /* win10_Nope.png */; };
+		FA2F32651863E31C00C96217 /* win25_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325E1863E31C00C96217 /* win25_Nope.png */; };
+		FA2F32661863E31C00C96217 /* win50_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F325F1863E31C00C96217 /* win50_Nope.png */; };
+		FA2F32671863E31C00C96217 /* win100_Nope.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2F32601863E31C00C96217 /* win100_Nope.png */; };
 		FA415525183DAADD00678ED7 /* BG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA415524183DAADD00678ED7 /* BG.jpg */; };
 		FA591870182ECCA8008CD6E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59186F182ECCA8008CD6E1 /* QuartzCore.framework */; };
 		FA591872182ECCA8008CD6E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA591871182ECCA8008CD6E1 /* OpenGLES.framework */; };
@@ -188,6 +205,24 @@
 /* Begin PBXFileReference section */
 		FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardsButton_Normal.png; sourceTree = "<group>"; };
 		FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardsButton_Pressed.png; sourceTree = "<group>"; };
+		FA2F32331862B87A00C96217 /* 5seconds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5seconds.png; sourceTree = "<group>"; };
+		FA2F32341862B87A00C96217 /* 30seconds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30seconds.png; sourceTree = "<group>"; };
+		FA2F32351862B87A00C96217 /* firstwin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstwin.png; sourceTree = "<group>"; };
+		FA2F323C1862B87A00C96217 /* win10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win10.png; sourceTree = "<group>"; };
+		FA2F323D1862B87A00C96217 /* win25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win25.png; sourceTree = "<group>"; };
+		FA2F323E1862B87A00C96217 /* win50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win50.png; sourceTree = "<group>"; };
+		FA2F323F1862B87A00C96217 /* win100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win100.png; sourceTree = "<group>"; };
+		FA2F324F1862C4FD00C96217 /* FeatsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatsScene.h; sourceTree = "<group>"; };
+		FA2F32501862C4FD00C96217 /* FeatsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatsScene.m; sourceTree = "<group>"; };
+		FA2F32561863D5FB00C96217 /* FeatsButton_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FeatsButton_Normal.png; sourceTree = "<group>"; };
+		FA2F32571863D5FB00C96217 /* FeatsButton_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FeatsButton_Pressed.png; sourceTree = "<group>"; };
+		FA2F325A1863E31C00C96217 /* 5seconds_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5seconds_Nope.png; sourceTree = "<group>"; };
+		FA2F325B1863E31C00C96217 /* 30seconds_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30seconds_Nope.png; sourceTree = "<group>"; };
+		FA2F325C1863E31C00C96217 /* firstwin_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstwin_Nope.png; sourceTree = "<group>"; };
+		FA2F325D1863E31C00C96217 /* win10_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win10_Nope.png; sourceTree = "<group>"; };
+		FA2F325E1863E31C00C96217 /* win25_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win25_Nope.png; sourceTree = "<group>"; };
+		FA2F325F1863E31C00C96217 /* win50_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win50_Nope.png; sourceTree = "<group>"; };
+		FA2F32601863E31C00C96217 /* win100_Nope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win100_Nope.png; sourceTree = "<group>"; };
 		FA415524183DAADD00678ED7 /* BG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BG.jpg; sourceTree = "<group>"; };
 		FA59186C182ECCA8008CD6E1 /* Galaxy Defenders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galaxy Defenders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA59186F182ECCA8008CD6E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -543,6 +578,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA2F32321862B82B00C96217 /* Feats */ = {
+			isa = PBXGroup;
+			children = (
+				FA2F325A1863E31C00C96217 /* 5seconds_Nope.png */,
+				FA2F325B1863E31C00C96217 /* 30seconds_Nope.png */,
+				FA2F325C1863E31C00C96217 /* firstwin_Nope.png */,
+				FA2F325D1863E31C00C96217 /* win10_Nope.png */,
+				FA2F325E1863E31C00C96217 /* win25_Nope.png */,
+				FA2F325F1863E31C00C96217 /* win50_Nope.png */,
+				FA2F32601863E31C00C96217 /* win100_Nope.png */,
+				FA2F32331862B87A00C96217 /* 5seconds.png */,
+				FA2F32341862B87A00C96217 /* 30seconds.png */,
+				FA2F32351862B87A00C96217 /* firstwin.png */,
+				FA2F323C1862B87A00C96217 /* win10.png */,
+				FA2F323D1862B87A00C96217 /* win25.png */,
+				FA2F323E1862B87A00C96217 /* win50.png */,
+				FA2F323F1862B87A00C96217 /* win100.png */,
+			);
+			name = Feats;
+			sourceTree = "<group>";
+		};
 		FA415530183DAF8100678ED7 /* Splash_Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +668,8 @@
 				FAF3B431183F233100C6C71E /* CreditsScene.m */,
 				FA67632118590F0C004277A7 /* LeaderboardScene.h */,
 				FA67632218590F0C004277A7 /* LeaderboardScene.m */,
+				FA2F324F1862C4FD00C96217 /* FeatsScene.h */,
+				FA2F32501862C4FD00C96217 /* FeatsScene.m */,
 				FA591A22182ECEAA008CD6E1 /* BackgroundLayer.h */,
 				FA591A23182ECEAA008CD6E1 /* BackgroundLayer.m */,
 				FA591884182ECCA8008CD6E1 /* Resources */,
@@ -1029,6 +1087,7 @@
 		FA591A38182ED0B9008CD6E1 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				FA2F32321862B82B00C96217 /* Feats */,
 				FAF3B427183F225C00C6C71E /* Icons */,
 				FAF3B426183F223E00C6C71E /* Random */,
 				FAF3B425183F21FD00C6C71E /* Game Entities */,
@@ -1051,6 +1110,8 @@
 		FAF3B424183F21CB00C6C71E /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				FA2F32561863D5FB00C96217 /* FeatsButton_Normal.png */,
+				FA2F32571863D5FB00C96217 /* FeatsButton_Pressed.png */,
 				FA15D84C185DF5BF00C725F8 /* BoardsButton_Normal.png */,
 				FA15D84D185DF5BF00C725F8 /* BoardsButton_Pressed.png */,
 				FADCE12B1854058400AC903E /* ContinueButton_Normal.png */,
@@ -1159,8 +1220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF3B439183F24E100C6C71E /* Defeat.png in Resources */,
+				FA2F32641863E31C00C96217 /* win10_Nope.png in Resources */,
 				FA15D84E185DF5BF00C725F8 /* BoardsButton_Normal.png in Resources */,
 				FA6AE1EE1835DA4100A84C54 /* ButtonNormal.png in Resources */,
+				FA2F324D1862B87A00C96217 /* win100.png in Resources */,
+				FA2F32411862B87A00C96217 /* 5seconds.png in Resources */,
 				FAF3B41F183F064800C6C71E /* MenuButton_Pressed.png in Resources */,
 				FAF3B42D183F229300C6C71E /* Galaxy_Defenders_Icon_iPhone.png in Resources */,
 				FAF3B41C183F059A00C6C71E /* Guide.png in Resources */,
@@ -1175,21 +1239,33 @@
 				FAD7A3ED1836E05D007C5A72 /* HPBar.png in Resources */,
 				FA6AE1E41834697000A84C54 /* LaserRed.png in Resources */,
 				FA6AE1E7183469BF00A84C54 /* PewPew.wav in Resources */,
+				FA2F32671863E31C00C96217 /* win100_Nope.png in Resources */,
 				FAD7A3EF183709B5007C5A72 /* Pause.png in Resources */,
+				FA2F32431862B87A00C96217 /* firstwin.png in Resources */,
+				FA2F32581863D5FB00C96217 /* FeatsButton_Normal.png in Resources */,
+				FA2F32591863D5FB00C96217 /* FeatsButton_Pressed.png in Resources */,
 				FAF3B3FC183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPhone-568h@2x.png in Resources */,
 				FA591A43182EDE0C008CD6E1 /* Explosion.mp3 in Resources */,
 				FA6AE1ED1835DA4100A84C54 /* ButtonActive.png in Resources */,
 				FAF3B435183F24D100C6C71E /* CreditsButton_Pressed.png in Resources */,
+				FA2F32611863E31C00C96217 /* 5seconds_Nope.png in Resources */,
+				FA2F32631863E31C00C96217 /* firstwin_Nope.png in Resources */,
 				FAF3B420183F064800C6C71E /* MenuButton_Normal.png in Resources */,
+				FA2F324C1862B87A00C96217 /* win50.png in Resources */,
 				FAF3B407183EDB8100C6C71E /* PlayButton_Pressed.png in Resources */,
+				FA2F324B1862B87A00C96217 /* win25.png in Resources */,
 				FA591A51182F326D008CD6E1 /* SpaceMusic.mp3 in Resources */,
 				FADCE12E1854058400AC903E /* ContinueButton_Pressed.png in Resources */,
 				FAF3B3F9183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad.png in Resources */,
+				FA2F32421862B87A00C96217 /* 30seconds.png in Resources */,
+				FA2F324A1862B87A00C96217 /* win10.png in Resources */,
 				FAF3B415183EF84A00C6C71E /* Galaxy_Defenders_Logo.png in Resources */,
 				FAF3B410183EF33D00C6C71E /* GuideButton_Normal.png in Resources */,
 				FAD7A40218372236007C5A72 /* Explosion.png in Resources */,
+				FA2F32651863E31C00C96217 /* win25_Nope.png in Resources */,
 				FA59189B182ECCA9008CD6E1 /* iTunesArtwork in Resources */,
 				FAF3B3F8183DB5B000C6C71E /* Galaxy_Defenders_Splash_iPad@2x.png in Resources */,
+				FA2F32661863E31C00C96217 /* win50_Nope.png in Resources */,
 				FAF3B42C183F229300C6C71E /* Galaxy_Defenders_Icon_iPhone@2x.png in Resources */,
 				FAF3B400183DB6EE00C6C71E /* Galaxy_Defenders_Splash_iPad_LS.png in Resources */,
 				FAF3B42F183F229300C6C71E /* Galaxy_Defenders_Icon_iPad.png in Resources */,
@@ -1200,6 +1276,7 @@
 				FAF3B42E183F229300C6C71E /* Galaxy_Defenders_Icon_iPad@2x.png in Resources */,
 				FA15D84F185DF5BF00C725F8 /* BoardsButton_Pressed.png in Resources */,
 				FA591A3B182ED0CE008CD6E1 /* PlayerShip.PNG in Resources */,
+				FA2F32621863E31C00C96217 /* 30seconds_Nope.png in Resources */,
 				FAF3B411183EF33D00C6C71E /* GuideButton_Pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,6 +1344,7 @@
 				FA591A1C182ECCAB008CD6E1 /* IntroLayer.m in Sources */,
 				FA5918AC182ECCA9008CD6E1 /* CCActionGrid.m in Sources */,
 				FA5918F5182ECCA9008CD6E1 /* CCGrid.m in Sources */,
+				FA2F32511862C4FD00C96217 /* FeatsScene.m in Sources */,
 				FA591A04182ECCAB008CD6E1 /* quaternion.c in Sources */,
 				FA591951182ECCAA008CD6E1 /* CCSpriteFrame.m in Sources */,
 				FA5918BE182ECCA9008CD6E1 /* CCActionProgressTimer.m in Sources */,

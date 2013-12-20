@@ -27,7 +27,8 @@
             LBText = [NSString stringWithFormat:@"%@%@", LBText, currentScore];
         }
         CCLabelTTF *leaderboard = [CCLabelTTF labelWithString:LBText fontName:@"Verdana" fontSize:36];
-        leaderboard.position = ccp(size.width/2, size.height - size.height/4);
+        leaderboard.anchorPoint = ccp(.5, 1);
+        leaderboard.position = ccp(size.width/2, size.height - size.height/5);
         CCMenuItem *openMenu = [CCMenuItemImage itemWithNormalImage:@"MenuButton_Normal.png" selectedImage:@"MenuButton_Pressed.png" target:self selector:@selector(openMenu)];
         openMenu.scale = 3;
         CCMenu *menu = [CCMenu menuWithItems:openMenu, nil];

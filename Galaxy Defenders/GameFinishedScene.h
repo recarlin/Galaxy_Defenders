@@ -12,10 +12,12 @@
 @interface GameFinishedScene : CCScene
 {
     CCSprite *resultsLabel;
+    CCSprite *feat;
     CCMenuItem *secondButton;
     int currentLevel;
     int currentScore;
     NSString *currentPlayer;
+    NSMutableDictionary *feats;
 }
 +(CCScene *) scene:(int)results onLevel:(int)level withScore:(int)score;
 @end

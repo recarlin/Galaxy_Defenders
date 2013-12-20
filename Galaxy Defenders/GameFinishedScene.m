@@ -42,9 +42,35 @@
             {
                 if (level == 3)
                 {
+                    if ([defaults objectForKey:@"GamesWon"] == NULL)
+                    {
+                        [defaults setObject:[NSNumber numberWithInt:1] forKey:@"GamesWon"];
+                        [self markFeatAsDone:5];
+                    } else
+                    {
+                        int won = [[defaults objectForKey:@"GamesWon"]intValue];
+                        [defaults setObject:[NSNumber numberWithInt:won + 1] forKey:@"GamesWon"];
+                        [defaults synchronize];
+                        int gamesWon = [[defaults objectForKey:@"GamesWon"]intValue];
+                        if (gamesWon == 10)
+                        {
+                            if (gamesWon == 25)
+                            {
+                                if (gamesWon == 50)
+                                {
+                                    if (gamesWon == 100)
+                                    {
+                                        [self markFeatAsDone:4];
+                                    }
+                                    [self markFeatAsDone:3];
+                                }
+                                [self markFeatAsDone:2];
+                            }
+                            [self markFeatAsDone:1];
+                        }
+                    }
                     secondButton = [CCMenuItemImage itemWithNormalImage:@"CreditsButton_Normal.png" selectedImage:@"CreditsButton_Pressed.png" target:self selector:@selector(openCredits)];
-                    NSUserDefaults *UD = [NSUserDefaults standardUserDefaults];
-                    NSArray *numbers = [UD arrayForKey:@"Numbers"];
+                    NSArray *numbers = [defaults arrayForKey:@"Numbers"];
                     if (numbers.count < 10 || currentScore > [[numbers objectAtIndex:9]integerValue])
                     {
                         [self setName];
@@ -139,5 +165,63 @@
     [UD setObject:names forKey:@"Names"];
     [UD setObject:numbers forKey:@"Numbers"];
     [UD synchronize];
+}
+-(void)markFeatAsDone:(int)featID
+{
+    NSUserDefaults *UD = [NSUserDefaults standardUserDefaults];
+    feats = [UD objectForKey:@"Feats"];
+    switch (featID) {
+        case 1:
+        {
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"win10"];
+            feat = [CCSprite spriteWithFile:@"win10.png"];
+        }
+            break;
+        case 2:
+        {
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"win25"];
+            feat = [CCSprite spriteWithFile:@"win25.png"];
+        }
+            break;
+        case 3:
+        {
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"win50"];
+            feat = [CCSprite spriteWithFile:@"win50.png"];
+        }
+            break;
+        case 4:
+        {
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"win100"];
+            feat = [CCSprite spriteWithFile:@"win100.png"];
+        }
+            break;
+        case 5:
+        {
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"firstwin"];
+            feat = [CCSprite spriteWithFile:@"firstwin.png"];
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+    [UD setObject:feats forKey:@"Feats"];
+    [UD synchronize];
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    feat.scale = 4;
+    feat.position = ccp(size.width - size.width/4, size.height/9);
+    feat.opacity = 0;
+    [self addChild:feat];
+    id fadeIn = [CCFadeIn actionWithDuration:.5];
+    id wait = [CCDelayTime actionWithDuration:2.0];
+    id fadeOut = [CCFadeOut actionWithDuration:.5];
+    id removeSprite = [CCCallFuncND actionWithTarget:self selector:@selector(remove:) data:feat];
+    [feat runAction:[CCSequence actions:fadeIn, wait, fadeOut, removeSprite, nil]];
+}
+-(void)remove:(CCSprite*)sprite
+{
+    [self removeChild:sprite cleanup:YES];
 }
 @end

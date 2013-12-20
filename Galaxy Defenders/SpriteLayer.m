@@ -263,21 +263,21 @@
     CGPoint velocity = ccpMult(leftJoystick.velocity, 500);
     CGPoint newPosition = ccp(player.position.x + velocity.x * deltaTime, player.position.y + velocity.y * deltaTime);
     CGSize size = [[CCDirector sharedDirector] winSize];
-    if (newPosition.y>=size.height - size.height/9)
+    if (newPosition.y>=size.height - size.height/6)
     {
-        newPosition.y=size.height - size.height/9;
+        newPosition.y=size.height - size.height/6;
     }
-    if (newPosition.y<size.height/7)
+    if (newPosition.y<size.height/6)
     {
-        newPosition.y=size.height/7;
+        newPosition.y=size.height/6;
     }
-    if (newPosition.x>size.width - size.width/9)
+    if (newPosition.x>size.width - size.width/8)
     {
-        newPosition.x=size.width - size.width/9;
+        newPosition.x=size.width - size.width/8;
     }
-    if (newPosition.x<size.width/9)
+    if (newPosition.x<size.width/8)
     {
-        newPosition.x=size.width/9;
+        newPosition.x=size.width/8;
     }
     [player setRotation:-rightJoystick.degrees + 90];
     [player setPosition:newPosition];
@@ -371,6 +371,25 @@
     [removeLasers release];
     if (health <= 0)
     {
+        if (time <= 5)
+        {
+            NSUserDefaults *UD = [NSUserDefaults standardUserDefaults];
+            NSDictionary *feats = [UD objectForKey:@"Feats"];
+            [feats setValue:[NSNumber numberWithInt:1] forKey:@"5seconds"];
+            [UD setObject:feats forKey:@"Feats"];
+            [UD synchronize];
+            CGSize size = [[CCDirector sharedDirector] winSize];
+            CCSprite *feat = [CCSprite spriteWithFile:@"5seconds.png"];
+            feat.scale = 4;
+            feat.position = ccp(size.width - size.width/4, size.height/9);
+            feat.opacity = 0;
+            [self addChild:feat];
+            id fadeIn = [CCFadeIn actionWithDuration:.5];
+            id wait = [CCDelayTime actionWithDuration:2.0];
+            id fadeOut = [CCFadeOut actionWithDuration:.5];
+            id removeSprite = [CCCallFuncND actionWithTarget:self selector:@selector(remove:) data:feat];
+            [feat runAction:[CCSequence actions:fadeIn, wait, fadeOut, removeSprite, nil]];
+        }
         [self unschedule:@selector(scoreTimer)];
         [self unschedule:@selector(playerAutoShoot)];
         CGPoint blowUpHere = ccp(player.position.x, player.position.y);
@@ -454,6 +473,7 @@
 {
 //Here we take the game results and open the finishing scene with the parameter to make sure we are getting the correct result.
     currentScore = currentScore + ((100 - time) * (health/25 + 1));
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     if (currentScore <= 0)
     {
         currentScore = 0;
@@ -486,5 +506,27 @@
     //This creates a laser for the player.
     time++;
     timer.string = [NSString stringWithFormat:@"Time: %i",time];
+    if (time == 30 & currentLevel == 3) {
+        NSUserDefaults *UD = [NSUserDefaults standardUserDefaults];
+        NSDictionary *feats = [UD objectForKey:@"Feats"];
+        [feats setValue:[NSNumber numberWithInt:1] forKey:@"30seconds"];
+        [UD setObject:feats forKey:@"Feats"];
+        [UD synchronize];
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        CCSprite *feat = [CCSprite spriteWithFile:@"30seconds.png"];
+        feat.scale = 4;
+        feat.position = ccp(size.width - size.width/4, size.height/9);
+        feat.opacity = 0;
+        [self addChild:feat];
+        id fadeIn = [CCFadeIn actionWithDuration:.5];
+        id wait = [CCDelayTime actionWithDuration:2.0];
+        id fadeOut = [CCFadeOut actionWithDuration:.5];
+        id removeSprite = [CCCallFuncND actionWithTarget:self selector:@selector(remove:) data:feat];
+        [feat runAction:[CCSequence actions:fadeIn, wait, fadeOut, removeSprite, nil]];
+    }
+}
+-(void)remove:(CCSprite*)sprite
+{
+    [self removeChild:sprite cleanup:YES];
 }
 @end

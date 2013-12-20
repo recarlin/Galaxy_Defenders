@@ -10,6 +10,7 @@
 #import "GuideScene.h"
 #import "CreditsScene.h"
 #import "LeaderboardScene.h"
+#import "FeatsScene.h"
 @interface MenuScene : CCScene <UIAlertViewDelegate>
 {
     
